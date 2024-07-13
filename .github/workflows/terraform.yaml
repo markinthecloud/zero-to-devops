@@ -1,7 +1,7 @@
 name: Terraform Workflow
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 
@@ -29,9 +29,3 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -out=tfplan
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve tfplan
-
-      - name: Display Outputs
-        run: terraform output
