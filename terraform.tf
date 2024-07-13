@@ -7,14 +7,6 @@ terraform {
  }
 }
 
-provider "digitalocean" {
-  token = var.DO_TOKEN
-}
-
-variable "DO_TOKEN" {
-  description = "DigitalOcean API token"
-}
-
 resource "digitalocean_droplet" "web_server" {
   name   = "web-server"
   region = "nyc1"
